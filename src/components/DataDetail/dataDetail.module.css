@@ -1,0 +1,43 @@
+.dataDetail {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+  border-radius: var(--borderRadius);
+  border: none;
+  box-shadow: var(--boxShadow);
+  padding: 5px;
+  transition: var(--transition);
+  box-sizing: border-box;
+  cursor: grab; /* Ensure the cursor is set to grab */
+  font-size: 16px;
+  width: fit-content; /* Ensure width remains consistent */
+}
+
+.dataDetailTag {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--borderRadius);
+  margin-left: 5px;
+  margin-right: 20px;
+  transition: var(--transition);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataDetail:hover {
+  transform: scale(1.1);
+  cursor: grab;
+}
+.dataDetail:hover .dataDetailTag {
+  transform: scale(2);
+  width: 5px;
+  height: 14px;
+  box-shadow: var(--boxShadow);
+}
+.dataDetail:active {
+  cursor: grabbing; /* Ensure the cursor is set to grabbing when active */
+}

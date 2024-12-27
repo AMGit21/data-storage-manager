@@ -1,0 +1,67 @@
+:root {
+  --borderRadius: 5px;
+  --boxShadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --bgColor: rgb(235, 235, 235);
+  --bgColor1: #c5003e;
+  --bgColor2: #f4a23c;
+  --bgColor3: #5c832f;
+  --txtColor: rgb(0, 44, 102);
+  --alertColor: rgb(255, 84, 96);
+  --transition: all 0.2s ease-in-out;
+}
+* {
+  color: var(--txtColor);
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--bgColor);
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--txtColor);
+  border-radius: var(--borderRadius);
+}
+
+.headerSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+.databaseIcon {
+  margin: -5px 25px 0 0;
+  font-size: 38px;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 1px 1px 4px var(--txtColor);
+}
+.dataTypeWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  justify-content: center;
+  align-items: flex-start;
+}
+/* CSS for screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+  .databaseIcon {
+    font-size: 27px;
+    margin: -5px 5px 0 0;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}

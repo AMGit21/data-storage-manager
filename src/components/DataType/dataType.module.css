@@ -1,0 +1,44 @@
+.dataType {
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px,
+    rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 2px 2px -1px,
+    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+    rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px,
+    rgba(42, 51, 70, 0.03) 0px 10px 10px -5px,
+    rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+  padding: 10px;
+  border-radius: var(--borderRadius);
+  margin: 10px auto;
+}
+/* .dataTypeTitle {
+  transition: var(--transition);
+}
+.dataType:hover .dataTypeTitle {
+  letter-spacing: 2px;
+} */
+.detailsWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks within elements */
+  padding-bottom: 10px; /* Add some padding to avoid scrollbar overlapping with content */
+  cursor: pointer; /* Ensure the cursor shows as a pointer */
+  max-height: 150px; /* Ensure it doesn't take too much vertical space */
+  width: 100%;
+}
+
+.detailsWrapper::-webkit-scrollbar {
+  height: 8px; /* Height of horizontal scrollbar */
+}
+
+.detailsWrapper::-webkit-scrollbar-thumb {
+  background-color: var(--txtColor); /* Scrollbar color */
+  border-radius: var(--borderRadius); /* Rounded corners for scrollbar thumb */
+}

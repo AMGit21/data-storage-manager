@@ -1,0 +1,327 @@
+.mainDataStorage {
+  padding: 10px;
+  margin: 20px auto;
+  border: none;
+  box-shadow: var(--boxShadow);
+  width: 85.5%;
+  height: 130px;
+  border-radius: var(--borderRadius);
+  overflow-x: hidden; /* Disable horizontal scrolling for the container */
+  transition: var(--transition);
+  overflow-y: auto;
+}
+
+.mainDataStorage::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainDataStorage::-webkit-scrollbar-thumb {
+  background-color: var(--txtColor);
+  border-radius: var(--borderRadius);
+}
+
+.dataStorageHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dataStorageHeader span {
+  font-weight: bold;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--boxShadow);
+  padding: 8px 5px;
+  min-width: 250px;
+  height: auto;
+  border-radius: var(--borderRadius);
+  background-color: var(--bgColor);
+}
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+}
+.addStorageButton,
+.decreaseStorageButton {
+  padding: 5px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  border: none;
+  box-shadow: var(--boxShadow);
+  font-size: 18px;
+}
+
+.addStorageIcon,
+.decreaseStorageIcon {
+  padding: 5px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  border: none;
+  box-shadow: var(--boxShadow);
+  font-size: 18px;
+  background-color: var(--bgColor);
+  transition: var(--transition);
+}
+.resetStorageIcon {
+  padding: 6px;
+  width: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  border: none;
+  box-shadow: var(--boxShadow);
+  font-size: 18px;
+  background-color: var(--bgColor);
+  transition: var(--transition);
+}
+.addStorageIcon:hover,
+.decreaseStorageIcon:hover,
+.resetStorageIcon:hover {
+  transform: scale(1.1);
+}
+.addStorageDropdown,
+.decreaseStorageDropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  min-width: fit-content;
+  min-height: fit-content;
+  /* background-color: red; */
+  position: absolute; /* Use absolute positioning for better control */
+  margin-top: 3px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Disable interaction when hidden */
+  transform: translateY(-10px); /* Slightly move it up */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transitions */
+  z-index: 1; /* Ensure dropdown is on top */
+}
+
+.addStorageDropdown.show,
+.decreaseStorageDropdown.show {
+  opacity: 1; /* Show when the class 'show' is added */
+  pointer-events: auto; /* Enable interaction when visible */
+  transform: translateY(0); /* Move back to the original position */
+}
+
+.addStorageDropdownButton,
+.decreaseStorageDropdownButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: fit-content;
+  height: 25px;
+  margin: 2px;
+  border-radius: var(--borderRadius);
+  border: none;
+  box-shadow: var(--boxShadow);
+  cursor: pointer;
+  z-index: 2; /* Ensure buttons are on top of the dropdown */
+}
+
+.resetStorageButton {
+  padding: 7px;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  border: none;
+  box-shadow: var(--boxShadow);
+  font-size: 16px;
+}
+
+.horizontalScrollContainer {
+  width: 100%;
+  height: 80px;
+  margin-top: 12px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.horizontalScrollContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontalScrollContainer::-webkit-scrollbar-thumb {
+  background-color: var(--txtColor);
+  border-radius: var(--borderRadius);
+}
+
+.dataStorage {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: fit-content;
+  overflow-x: visible; /* Ensure overflow is visible */
+  position: relative; /* To manage positioned overflow items */
+}
+
+.dataDetail {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+  border-radius: var(--borderRadius);
+  border: none;
+  box-shadow: var(--boxShadow);
+  padding: 5px;
+  transition: var(--transition);
+  box-sizing: border-box;
+  font-size: 16px;
+  width: fit-content; /* Ensure width remains consistent */
+  background-color: var(--bgColor) !important;
+  cursor: auto !important;
+}
+
+.dataDetailTag {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--borderRadius);
+  margin-left: 5px;
+  margin-right: 20px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .dataDetail:hover {
+  background-color: var(--alertColor) !important;
+} */
+
+.dataDetail:active {
+  cursor: grabbing; /* Ensure the cursor is set to grabbing when active */
+}
+
+.remainingStorageAlert {
+  transition: var(--transition);
+  animation: zoom-in-out 2s infinite ease-in-out; /* Apply animation */
+}
+
+/* Define the keyframes for the zoom animation */
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.2); /* Zoom in */
+  }
+  100% {
+    transform: scale(1); /* Back to normal */
+  }
+}
+
+.remainingStorageAlert:hover {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+
+/* CSS for screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+  .mainDataStorage {
+    height: 280px;
+  }
+  .dataStorageHeader {
+    flex-direction: column;
+    width: 100%;
+    height: 170px;
+  }
+}
+.customTooltip {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  background-color: var(--txtColor) !important;
+  border-radius: var(--borderRadius) !important;
+  padding: 5px 10px !important;
+  min-width: fit-content !important;
+  min-height: fit-content;
+  opacity: 0.9 !important;
+}
+.customTooltip span {
+  padding: 3px 0 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  background-color: transparent !important;
+  color: var(--bgColor) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+}
+.customTooltip strong {
+  color: var(--alertColor) !important;
+  font-size: 16px !important;
+}
+.tooltipArrow {
+  background-color: var(--alertColor) !important;
+}
+
+.tapToDelete {
+  background-color: var(--alertColor) !important;
+  position: relative;
+  margin-top: -37px;
+  margin-left: -37px;
+  height: 27px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--borderRadius);
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 24px;
+
+  /* Hidden by default */
+  opacity: 0;
+  transform: scale(0.8); /* Slightly shrink */
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.tapToDelete.show {
+  opacity: 1;
+  transform: scale(1); /* Back to original size */
+}
+
+.tapToDelete.hide {
+  opacity: 0;
+  transform: scale(0.8); /* Shrink slightly when hiding */
+  pointer-events: none; /* Prevent clicking when hidden */
+}
+.tapToRemoveInfoSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tapToRemoveInfoSectionText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-left: 7px;
+}
